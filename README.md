@@ -18,12 +18,30 @@
     * OAuthClient2
     * SqlAlchemy
 * Apache2
+   * WSGI package
 * Postgresql
 * Git
+* Catalog App
+
+### Configurations
+* Postgresql
+   * Modified /etc/postgresql/9.5/main/postgresql.conf to allow local access only.
+   * Created "catalog" user and granted permissions for "catalog" database only.
+* Apache2
+   * Created application.wsgi file that imports and executes the python catalog application
+   * Modified etc/apache2/sites-available/000-default.conf to make application.wsgi the single entry point and set the execution user. 
+* Catalog App
+   * Update connection string with the database and user credentials.
 
 ### Application Hosted
 Car Catalog App
 * http://www.3.90.124.238.xip.io
+
+### Third party resources
+* http://flask.pocoo.org/docs/1.0/deploying/mod_wsgi/
+* https://flask-cors.readthedocs.io/en/latest/
+* https://developers.google.com/api-client-library/python/guide/aaa_oauth
+* https://www.postgresql.org/docs/9.1/app-createuser.html
 
 ### Project Status
 * Submitted
