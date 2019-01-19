@@ -24,14 +24,19 @@
 * Catalog App
 
 ### Configurations
+* Server
+   * Changed ssh port from 22 to 2200
+   * Enabled firewall to allow traffic on port 2200, 80, and 123 only.
+   * Disabled root ssh access
+   * Allowed only Key-based SSH authentication
 * Postgresql
    * Modified /etc/postgresql/9.5/main/postgresql.conf to allow local access only.
-   * Created "catalog" user and granted permissions for "catalog" database only.
+   * Created "catalog" user and granted privileges for "catalog" database only.
 * Apache2
    * Created application.wsgi file that imports and executes the python catalog application
    * Modified etc/apache2/sites-available/000-default.conf to make application.wsgi the single entry point and set the execution user. 
 * Catalog App
-   * Update connection string with the database and user credentials.
+   * Updated connection string with catalog database and user credentials.
 
 ### Application Hosted
 Car Catalog App
